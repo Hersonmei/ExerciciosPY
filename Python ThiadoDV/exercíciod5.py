@@ -25,3 +25,36 @@ elif 35 < b < 39.9:
     print('Obesidade II')
 elif b > 40:
     print('Obesidade III')
+
+
+#Função que recebe dois números do usuário e retorna o maior número. Se for igual, retornar mensagem informando.
+
+num1 = input('Escolha o primeiro número: ')
+num2 = input('Escolha o segundo número: ')
+
+def maior_numero(num1, num2):
+    if num1 > num2:
+        return num1
+    if num2 > num1:
+        return num2
+    if num1 == num2:
+        print('Por favor, informar números diferentes.')
+
+resultado = maior_numero(num1, num2)
+print(resultado)
+
+#Função que recebe dois números do usuário e retorna o menor número. Se for igual, retornar mensagem informando.
+
+num1 = input('Escolha o primeiro número: ')
+num2 = input('Escolha o segundo número: ')
+
+def maior_numero(num1, num2):
+    if num1 > num2:
+        return num2
+    if num2 > num1:
+        return num1
+    if num1 == num2:
+        print('Por favor, informar números diferentes.')
+
+resultado = maior_numero(num1, num2)
+print(resultado)

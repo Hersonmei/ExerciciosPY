@@ -1,9 +1,8 @@
-stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-def displayInventory(inventory):
-    print("Inventory:")
-    item_total = 0
-    for k, v in inventory.items():
-        print(str(v) + ' ' + k)
-        item_total += v
-    print("Total number of items: " + str(item_total))
-displayInventory(stuff)
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+alien_0['y_position'] += 3
+print(alien_0)

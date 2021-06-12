@@ -1,6 +1,6 @@
 #! python3
 #lucky.py - Abre bários resultados de pesquisa no Google.
-@py.exe C:\Users\herso\OneDrive\APython\Exercícios\Automatize tarefas maçantes\Web scraping %*
+@py.exe C:\Users\herso\OneDrive\APython %*
 @pause
 
 import requests, sys, webbrowser, bs4

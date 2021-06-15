@@ -34,7 +34,7 @@ def jogo():
         if escolha != dragão:
             print('Teeente correrrr!!! Você caiu na caverna do Dragão Faminto! Fuja!!')
 
-continuar = ''
+continuar = ''  #Aqui vai começar pq é a primeira parte do programa que vai rodar, como as outras são apenas funções, serão apenas definidas e não serão executadas até ser chamada.
 while continuar == 's' or continuar != 'n':
     introducao()
     jogo()

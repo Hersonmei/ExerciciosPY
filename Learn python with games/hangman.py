@@ -44,7 +44,7 @@ def getRandomWord(wordList):
     return wordList[wordIndex]
 
 def displayBoard(missedLetters, correctLetters, secretWord):
-    print(HANGMAN_PICS(len[missedLetters]))
+    print(HANGMAN_PICS[len(missedLetters)])
     print()
 
     print('Missed Letters:' , end=' ')
@@ -114,4 +114,13 @@ while True:
             displayBoard(missedLetters, correctLetters, secretWord)
             print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
             gameIsDone = True
-            
+        
+    # Ask the player if they want to play again ( but only if the gme is done).
+    if gameIsDone:
+        if playAgain():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+            secretWord = getRandomWord(words)
+        else:
+            break

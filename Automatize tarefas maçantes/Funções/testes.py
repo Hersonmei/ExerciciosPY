@@ -1,12 +1,12 @@
+import random
+words = {'Colors':'red orange yellow green blue indigo violet white blackbrown'.split(), 
+'Shapes':'square triangle rectangle circle ellipse rhombus trapezoid chevron pentagon hexagon septagon octagon'.split(),
+'Fruits':'apple orange lemon lime pear watermelon grape grapefruit cherry banana cantaloupe mango strawberry tomato'.split(),
+'Animals':'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark sheep skunk squid tiger turkey turtle weasel whale wolf wombat zebra'.split()}
 
-secretWord = 'ant'
-correctLetters = 'at'
-blanks = '_' * len(secretWord)
+wordKey = random.choice(list(words.keys()))
 
-for i in range(len(secretWord)): # Raplace blanks with correctly guessed Letters.
-    if secretWord[i] in correctLetters:
-        blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+wordIndex = random.randint(0, len(words[wordKey]) - 1)  #Aui também será (-1), pq o len() vai mostrar 2, mas o random tem que ir só de zero a 1.
 
-for letter in blanks: # Show the secret word with spaces in between each letter.
-    print(letter, end=' ')
-print()
+
+print([words[wordKey][wordIndex], wordKey])

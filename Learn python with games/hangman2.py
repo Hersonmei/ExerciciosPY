@@ -34,13 +34,31 @@ HANGMAN_PICS = ['''
   O   |
  /|\  |
  / \  |
+     ===''','''
+  +---+
+ [O   |
+ /|\  |
+ / \  |
+     ===''','''
+  +---+
+ [O]  |
+ /|\  |
+ / \  |
      ===''']
 
-words = 'ant zebra'.split()
-def getRandomWord(wordList):
-    #This function returns a random string from the passed list of strings.
-    wordIndex = random.randint(0, len(wordList) - 1)  #Aui também será (-1), pq o len() vai mostrar 2, mas o random tem que ir só de zero a 1.
-    return wordList[wordIndex]
+words = {'Colors':'red orange yellow green blue indigo violet white blackbrown'.split(), 
+'Shapes':'square triangle rectangle circle ellipse rhombus trapezoid chevron pentagon hexagon septagon octagon'.split(),
+'Fruits':'apple orange lemon lime pear watermelon grape grapefruit cherry banana cantaloupe mango strawberry tomato'.split(),
+'Animals':'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark sheep skunk squid tiger turkey turtle weasel whale wolf wombat zebra'.split()}
+
+def getRandomWord(wordDic):
+    #This function returns a random string from the passed dictionary of lists of strinfs and its key.
+    # First, randomly select a key from the dicionary.
+    wordKey = random.choice(list(wordDic.keys()))
+
+    #Second, randimly select a word from the keys list in the dictionary:
+    wordIndex = random.randint(0, len(wordDic[wordKey]) - 1)  #Aui também será (-1), pq o len() vai mostrar 2, mas o random tem que ir só de zero a 1.
+    return [wordDic[wordKey][wordIndex], wordKey]
 
 def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_PICS[len(missedLetters)])
@@ -82,12 +100,27 @@ def playAgain():
     return input().lower().startswith('y')
 
 print(' H A N G M A N')
-missedLetters = '' #u
-correctLetters = '' #an
-secretWord = getRandomWord(words) 
+
+difficulty = ''
+while difficulty not in 'EMH':
+    print('Enter dificulty: E - Easy, M - Medium, H - Hard')
+    difficulty = input().upper()
+if difficulty == 'M':
+    del HANGMAN_PICS[8]
+    del HANGMAN_PICS[8]
+if difficulty == 'H':
+    del HANGMAN_PICS[8]
+    del HANGMAN_PICS[7]
+    del HANGMAN_PICS[5]
+    del HANGMAN_PICS[3]
+
+missedLetters = '' 
+correctLetters = '' 
+secretWord, secretSet = getRandomWord(words) 
 gameIsDone = False
 
 while True:
+    print('The secret word is in the set: ' + secretSet)
     displayBoard(missedLetters, correctLetters, secretWord)
 
     # Let the player enter a letter.
@@ -120,6 +153,7 @@ while True:
             missedLetters = ''
             correctLetters = ''
             gameIsDone = False
-            secretWord = getRandomWord(words)
+            secretWord, secretSet = getRandomWord(words)
         else:
             break
+

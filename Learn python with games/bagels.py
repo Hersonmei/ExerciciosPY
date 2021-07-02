@@ -54,18 +54,26 @@ while True:
     secretNum = getSecretNum()
     print('I have thought up a number. You have %s guesses to get it. ' % (MAX_GUESS))
     
-    
+    guessPrevius = []
     guessesTaken = 1
     while guessesTaken <= MAX_GUESS:
-        
+            
         guess = ''
-        while len(guess) != NUM_DIGTS or not isOnlyDigits(guess):
+        while True: 
             print('Guess #%s' % (guessesTaken))
+            print(guessPrevius)
             guess = input()
             
+            if len(guess) != NUM_DIGTS:
+                continue
+            elif isOnlyDigits(guess) == False:
+                continue
+            elif guess not in guessPrevius:
+                break 
             
         print(getClues(guess, secretNum))
         guessesTaken += 1
+        guessPrevius.append(guess)
 
         if guess == secretNum:
             break

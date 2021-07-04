@@ -26,17 +26,17 @@ Example:
     > mopqt    <-- Enter the correct alphabetical order.
     '''.format(QUIZ_DURATION))
     #input('Press Enter to begin...')|
-
     startTime = time.time()  # Get the current time for the start time. (Vai pegar o tempo atual, mas em formatação de um float extenso. Os segundos serão os últimos números antes do ponto 2424343*23*.93863)
     numCorrect = 0 # Number of questions answered correctly.
     while True: # Main loop game.
         # Come up with letters for the question:
+        
         queizLetters = random.sample(ALPHABET, QUESTION_SIZE) #Aqui vai pegar o número 5 que foi definifo previamente em Question_Size, e depois vai pegar 5 itens randomicos do primeiro argumento, nesse caso o ALPHABET.
         print(' '.join(queizLetters))
-        response = input('> ').upper()
+        response = input('>  ').upper()
         response = response.replace(' ', '') # Remove spaces (Aqui vai remover os espaçoes da resposta do jogador!)
 
-        if response not in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' or len(response) != QUESTION_SIZE:
+        if not response.isalpha() or len(response) != QUESTION_SIZE:
             continue
 
         # Check if the quiz's time is up:

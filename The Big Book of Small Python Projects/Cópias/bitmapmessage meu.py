@@ -35,10 +35,10 @@ for linha in bitmap.splitlines():
         #vai ter um for dentro do for anterior, para ao entrar nessa linha, eu tenho que percorrer cada item dessa linha, usando aquele enumerate com duas variáveis.
         if ponto == ' ':
             # se o item dentro da linha for vazio, printar  (' ', end='')??
-            print(' ')
+            print(' ', end='')
         else:
             #else: print(input[i % len(input)])
             print(nome[i % len(nome)], end='')
-    print()
+    print('XX')
 
 

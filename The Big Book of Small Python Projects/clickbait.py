@@ -14,26 +14,27 @@ STATES = ['California', 'Texas', 'Florida', 'New York', 'Pennsylvania', 'Illinoi
 NOUNS =  ['Athlete', 'Clown', 'Shovel', 'Paleo Diet', 'Doctor', 'Parent', 'Cat', 'Dog', 'Chicken', 'Robot', 'Video Game', 'Avocado', 'Plastic Straw','Serial Killer', 'Telephone Psychic']
 PLACES = ['House', 'Attic', 'Bank Deposit Box', 'School', 'Basement', 'Workplace', 'Donut Shop', 'Apocalypse Bunker']
 WHEN = ['Soon', 'This Year', 'Later Today', 'RIGHT NOW', 'Next Week']
+BAIRRO = ['Marambaia', 'Roger', 'Cuiá', 'Planeta dos Macacos', 'Beco da poeira']
 
 def main():
     print('Our website needs to trick people into looking at ads!')
     while True:
         print('Enter the number of clickbait headlines to generate')
-        response = input('> ')
+        response = '4'
         if not response.isdecimal():
             print('Please enter a number')
         else:
             numberOfHeadlines = int(response)
             break # Exit the loop once a valid number is entered.
     for i in range(numberOfHeadlines):
-        clickbaitType = random.randint(1, 8)
+        clickbaitType = random.randint(8, 8)
 
         if clickbaitType == 1:
             headline = generateAreMillennialsKillingHeadline()
         elif clickbaitType == 2:
-                headline = generateWhatYouDontKnowHeadline()
+            headline = generateWhatYouDontKnowHeadline()
         elif clickbaitType == 3:
-                headline = generateBigCompaniesHateHerHeadline()
+            headline = generateBigCompaniesHateHerHeadline()
         elif clickbaitType == 4:
             headline = generateYouWontBelieveHeadline()
         elif clickbaitType == 5:
@@ -44,7 +45,10 @@ def main():
             headline = generateReasonsWhyHeadline()
         elif clickbaitType == 8:
             headline = generateJobAutomatedHeadline()
-
+        elif clickbaitType == 9:
+            headline = aquieminhavez()
+        elif clickbaitType == 10:
+            headline = perigoso()
         print(headline)
     print()
 
@@ -53,6 +57,20 @@ def main():
     print('Post these to our', website, when, 'or you\'re fired!') 
 
 # Each of these functions returns a different type of headline:
+def perigoso():
+    place = random.choice(STATES)
+    bairro = random.choice(BAIRRO)
+    noun = random.choice(NOUNS)
+    return 'Se você conhece alguém que nasceu em {} ou {}, você deve pegar o seu {} e tomar muito cuidado!'.format(place, bairro, noun)
+
+
+def aquieminhavez():
+    objectp = random.choice(OBJECT_PRONOUNS)
+    state = random.choice(STATES)
+    place = random.choice(PLACES)
+    time = random.choice(WHEN)
+    return '{} live in {} won\'t go post anything because {} exploded {}'.format(objectp, state, place, time)
+
 def generateAreMillennialsKillingHeadline():
     noum = random.choice(NOUNS)
     return 'Are Millennials Killing the {} Industry?'.format(noum)

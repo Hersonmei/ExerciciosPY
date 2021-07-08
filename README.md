@@ -1,1 +1,1 @@
-# Vou atualizando nesse repositório todos os exercícios que serão feitos na fase inicial do estudo da linguagem Python. Utilizando os exercícios do ThiagoDV, e dos livros Automatizando tarefas maçantes e Curso intensivo de PYthon.
+# Vou atualizando nesse repositório todos os exercícios que serão feitos na fase inicial do estudo da linguagem Python. Utilizando os exercícios do ThiagoDV, e dos livros Automatizando tarefas maçantes, The big book of smal projects e Curso intensivo de PYthon.

@@ -1,17 +1,7 @@
-"""Bitmap Message, by Al Sweigart al@inventwithpython.com
-Displays a text message according to the provided bitmap image.
-This code is available at https://nostarch.com/big-book-small-python-programming
-Tags: tiny, beginner, artistic"""
-
 import sys
 
-# (!) Try changing this multiline string to any image you like:
-
-# There are 68 periods along the top and bottom of this string:
-# (You can also copy and paste this string from
-# https://inventwithpython.com/bitmapworld.txt)
 bitmap = """
-.X..................................................................
+....................................................................
    **************   *  *** **  *      ******************************
   ********************* ** ** *  * ****************************** *
  **      *****************       ******************************
@@ -33,20 +23,22 @@ bitmap = """
                     **     *                    *
 ...................................................................."""
 
-print('Bitmap Message, by Al Sweigart al@inventwithpython.com')
-print('Enter the message to display with the bitmap.')
-message = input('>  ')
-if message == '':
+print('Entre um nome a sua escolha:')
+nome = 'herson'
+if nome == '':
+    #se colocar um texto vazio no input, ativar o sys.exit().
     sys.exit()
 
-# Loop over each line in the bitmap:
-for line in bitmap.splitlines():
-    # Loop over each characther in the line:
-    for i, bit in enumerate(line):
-        if bit == ' ':
-            # Print an empty space since there's a space in the bitmap:
-            print(' ', end='')
+for linha in bitmap.splitlines():
+    #fazer um for para percorrer cada linha da string. #usar aquela .splitlines() para separar em cada linha em uma string dentro de uma lista.
+    for i, ponto in enumerate(linha):
+        #vai ter um for dentro do for anterior, para ao entrar nessa linha, eu tenho que percorrer cada item dessa linha, usando aquele enumerate com duas variáveis.
+        if ponto == ' ':
+            # se o item dentro da linha for vazio, printar  (' ', end='')??
+            print(' ')
         else:
-            #Print a characther from the message:
-            print(message [i % len(message)], end='')
-    print() # Print a newline.
+            #else: print(input[i % len(input)])
+            print(nome[i % len(nome)], end='')
+    print()
+
+

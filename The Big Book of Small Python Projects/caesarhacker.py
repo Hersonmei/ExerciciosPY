@@ -10,16 +10,16 @@ print('Caesar Cipher Hacker, by Al Sweigart al@inventwithpython.com')
 
 # Let the usser specify the message to hack:
 print('Enter the encrypted Caesar cipher message to hack.')
-message = input('>  ')
+message = 'HERSON'
 
 #Every possivle symbol that can be encrypted/decrypted:
 #(this must match ths SUMBOLS used when encrypting the message.)
 #abcdefghijklmnopqrstuvxz
 #ABCDEFGHIJKLMNOPQRSTUWXYZ
-SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUWXYZ'
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 for key in range(len(SYMBOLS)): #Loop trough every possible key.
-    translated = ''
+    #translated = ''
 
     # Decrypt each symbol in the message:
     for symbol in message:

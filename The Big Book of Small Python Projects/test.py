@@ -1,4 +1,4 @@
-caramba = '''
-message = 'herson'
-for i,b in enumerate(caramba):
-    print([i % len(message)], end='')
+num = 16
+key = 26
+num = num - key
+print(num)

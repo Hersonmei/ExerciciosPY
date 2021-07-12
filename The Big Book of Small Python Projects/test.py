@@ -1,4 +1,5 @@
-num = 16
-key = 26
-num = num - key
-print(num)
+secondsLeft = 5
+seconds = str(secondsLeft % 60)
+print(3008333/3600)
+
+

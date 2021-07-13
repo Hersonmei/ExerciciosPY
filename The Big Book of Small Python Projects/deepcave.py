@@ -7,7 +7,7 @@ Tags: tiny, beginner, scrolling, artistic"""
 import random, sys, time
 
 # Set up the constants:
-WIDTH = 70 # (!) Try changing this to 10 or 30
+WIDTH =  70 # (!) Try changing this to 10 or 30
 PAUSE_AMOUNT = 0.05  # (!) Try changing this to 0 or 1.0.
 
 print('Deep Cave, by Al Sweigart al@inventwithpython.com')
@@ -20,7 +20,7 @@ gapWidth = 10
 while True:
     #Display the tunnel segment:
     rightWidth = WIDTH - gapWidth - leftWidth
-    print(('#' * leftWidth) + (' ' * gapWidth) + ('#'  * rightWidth))
+    print(('#' * leftWidth) + ('.' * gapWidth) + ('#'  * rightWidth))
 
     # Check for Ctrl-C press durinf the brief pause:
     try:
@@ -36,7 +36,8 @@ while True:
         leftWidth = leftWidth + 1 # Increase the left side width.
     else:
         pass # Do nothing, no change in left side width.
-
+     
+       
     # Adjust the gap width:
     # (!) Try uncommenting out all of the following code:
     #diceRoll = random.randint(1, 6)

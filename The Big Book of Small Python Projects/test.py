@@ -1,5 +1,8 @@
-import time
+import random
+from shutil import get_terminal_size
 
-ee = time.localtime()
+WIDTH = get_terminal_size()[0]
 
-print(ee.tm_hour % 12)
+colunas = [0] * WIDTH
+
+print(colunas)

@@ -1,8 +1,5 @@
-import random
-from shutil import get_terminal_size
+import math
 
-WIDTH = get_terminal_size()[0]
+a = math.sqrt(55)
 
-colunas = [0] * WIDTH
-
-print(colunas)
+print(a)

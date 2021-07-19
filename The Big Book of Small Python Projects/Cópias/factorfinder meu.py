@@ -1,15 +1,15 @@
 import math, sys
 
 while True:
-    numero = input('Digite um número maior que 0 ou SAIR: \n')
+    resposta = input('Digite um número maior que 0 ou SAIR: \n')
     
-    if numero.upper() == 'SAIR' or numero.upper().startswith('S'):
+    if resposta.upper() == 'SAIR' or resposta.upper().startswith('S'):
         sys.exit()
 
-    if not numero.isdecimal() and numero > 0:
+    if not resposta.isdecimal() and resposta > 0:
         continue
 
-    numero = int(numero)
+    numero = int(resposta)
 
     fatores = []
 

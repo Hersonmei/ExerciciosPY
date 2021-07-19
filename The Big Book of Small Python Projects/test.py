@@ -1,5 +1,7 @@
-import math
+import math, time, random
 
-a = math.sqrt(55)
+
+
+a = time.sleep(random.randint(20, 50) / 10)
 
 print(a)

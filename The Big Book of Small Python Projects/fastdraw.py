@@ -12,7 +12,7 @@ print('dram in the west!')
 print('Whe you see "DRAW", you have 0.3 seconds to press Enter.')
 print('But you lose if you press Enter before "DRAW" appears.')
 print()
-
+input('Press Enter to begin...')
 
 while True:
     print()

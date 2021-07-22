@@ -7,7 +7,7 @@ import random
 
 def askForGuess():
     while True:
-        guess = input('>  ') # Enter the guess.
+        guess = input(secretLetter) # Enter the guess.
 
         if guess.isalpha():
             return guess.upper()  # Convert string guess to an integer.

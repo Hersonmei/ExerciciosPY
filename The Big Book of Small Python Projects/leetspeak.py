@@ -13,8 +13,8 @@ except ImportError:
 
 def main():
     print('''L3375P34]< (leetspeek)
-By Al Sweigart al@inventwithpython.com
-Enter your leet message:''')
+    By Al Sweigart al@inventwithpython.com
+    Enter your leet message:''')
     english = input('> ')
     print()
     leetspeek = englishToLeetspeak(english)

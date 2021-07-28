@@ -9,31 +9,30 @@ import random, time
 print('''Million Dice Roll Statistics Simulator
 By Al Sweigart al@inventwithpython.com
 Enter how many six-sided dice you want to roll:''')
-numberOfCoin = 1
+numberOfDice = input('> ')
 
 # Set up a dictionary to store the results of each dice roll:
-results = {1: 0, 2:0}
-
+results = {}
+for i in range(numberOfDice, (numberOfDice * 6) + 1):
+    results[i] = 0
 
 
 # Simulate dice rolls:
-print('Simulating 1,000,000 rolls of {} coin...'.format(numberOfCoin))
+print('Simulating 1,000,000 rolls of {} dice...'.format(numberOfDice))
 lastPrintTime = time.time()
 for i in range(1000000):
     if time.time() > lastPrintTime + 1:
         print('{}% done...'.format(round(i /10000, 1)))
         lastPrintTime = time.time()
 
-    
-    if random.randint(1, 2) == 1:
-        results[1] += 1
-    else:
-        results[2] += 1
-    
+    total = 0
+    for j in range(numberOfDice):
+        total = total + random.randint(1, 6)
+    results[total] = results[total] + 1
 
 # Display Results:
 print('TOTAL - ROLLS - PERCENTAGE')
-for i in range(numberOfCoin, (numberOfCoin * 6) + 1):
+for i in range(numberOfDice, (numberOfDice * 6) + 1):
     roll = results[i]
     percentage = round(results[i] / 10000, 1)
     print('  {} - {} rolls - {}%'. format(i, roll, percentage))

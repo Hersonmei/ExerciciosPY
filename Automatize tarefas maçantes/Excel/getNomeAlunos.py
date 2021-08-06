@@ -11,6 +11,10 @@ sheet1 = wb['Page 1']  # Informação tirada da nova edição do livro!
 
 sheet2 = wb['Page 2']
 
+sheet3 = wb['Page 3']
+
+nomesplanilha = []
+
 
 for i in range(12,34):
     if 10 <= int(sheet1.cell(row=i ,column=13).value) <= 18:
@@ -19,4 +23,7 @@ for i in range(12,34):
 for i in range(3,16):
     if 10 <= int(sheet2.cell(row=i ,column=8).value) <= 18:
         print(sheet2.cell(row=i ,column=4).value)
-    
+
+# Falta saber como pegar esses nomes para colocar para pesquisar no sigaa.
+
+ 

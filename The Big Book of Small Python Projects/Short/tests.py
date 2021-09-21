@@ -1,17 +1,4 @@
-from itertools import combinations
-omega = combinations(range(1,11), 6)
-
-evento = ''
-i = 0
-
-for x in omega:
-    i += 1
-    evento.append(x)
-    
-print("{:,}".format(i), 'resultados possíveis.')
-
-
-
-#for j in evento:
-    #print(j)
-    
+if __name__ == '__main__':
+    n = int('5 2 3 6 6 5)
+    arr = map(int, input().split())
+    print(arr)
